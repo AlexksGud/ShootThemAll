@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EasyEnemy : Person
 {
-
+    
+    
     void Start()
     {
         
@@ -14,5 +15,20 @@ public class EasyEnemy : Person
     void Update()
     {
         
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+
+        if (_healthPonts <= 0)
+        {
+            OnDie();
+        }
+       
+    }
+    public void OnDie()
+    {
+
     }
 }
